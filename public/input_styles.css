@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    /* group utlities */
+    input{
+        @apply bg-transparent border-2 rounded-full p-2 m-2; 
+    }
+    
+    .submit{
+        @apply border-2 bg-white rounded-full font-semibold p-2 mt-8 mb-0 m-2 hover:shadow-md;
+    }
+    
+  }
