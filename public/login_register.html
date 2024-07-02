@@ -37,8 +37,48 @@
       </form>
       <h2 class="pb-8">
         Don't have an account?
-        <button type="submit" class="register font-semibold hover:underline">
+        <button
+          type="submit"
+          class="register_btn font-semibold hover:underline"
+        >
           Register
+        </button>
+      </h2>
+    </div>
+
+    <div
+      class="register flex flex-col w-96 border-2 bg-gray-100 rounded-lg shadow-xl"
+    >
+      <h1 class="text-3xl font-bold text-center pt-8">Create Account</h1>
+      <form action="" method="post" class="flex flex-col px-10 pb-5 pt-7">
+        <input
+          type="email"
+          id="mail"
+          name="user_email"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="text"
+          id="name"
+          name="user_name"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+
+        <button class="submit" type="submit">Create Account</button>
+      </form>
+      <h2 class="pb-8">
+        Already have an account?
+        <button type="submit" class="login_btn font-semibold hover:underline">
+          Login
         </button>
       </h2>
     </div>
