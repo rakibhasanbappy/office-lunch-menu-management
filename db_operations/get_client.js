@@ -1,7 +1,7 @@
 const { Client } = require("pg");
 require("dotenv").config();
 
-const client = async function () {
+async function getClient() {
   const client = new Client({
     host: process.env.PG_HOST,
     port: process.env.PG_PORT,
@@ -21,7 +21,7 @@ const client = async function () {
     console.log(err);
     return null;
   }
-};
+}
 
 // export the module
-module.exports = client;
+module.exports = getClient;

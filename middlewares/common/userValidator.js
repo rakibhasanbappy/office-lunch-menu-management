@@ -15,7 +15,8 @@ const addUserValidator = [
     .notEmpty()
     .withMessage("Name is required")
     .isAlpha("en-US", { ignore: "-" })
-    .withMessage("Name must be alphabetic"),
+    .withMessage("Name must be alphabetic")
+    .escape(),
   body("password")
     .isStrongPassword()
     .withMessage(
@@ -32,6 +33,17 @@ const addUserValidationHandler = function (req, res, next) {
     res.status(400).json({ errors: mappedErrors });
   }
 };
+
+/*
+mappedErrors = {
+  name: {
+    msg:"Invalid value",
+  },
+  email: {
+    msg:"Invalid value",
+  },
+}
+*/
 
 module.exports = {
   addUserValidator,
