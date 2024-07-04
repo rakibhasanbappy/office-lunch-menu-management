@@ -12,10 +12,10 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // routes
-app.use("/user/", userRouter);
+app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", " login_register.html"));
+  res.sendFile(path.join(__dirname, "public", "login_register.html"));
 });
 
 const PORT = process.env.PORT || 3000;
