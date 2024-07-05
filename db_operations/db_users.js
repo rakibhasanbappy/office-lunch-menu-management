@@ -14,7 +14,22 @@ async function createUser(newUser) {
   }
 }
 
+// get user by email
+async function getUserByEmail(email) {
+  try {
+    const client = await get_client();
+    const { rows } = await client.query(
+      `SELECT * FROM users WHERE email = $1`,
+      [email]
+    );
+    return rows;
+  } catch (err) {
+    return err;
+  }
+}
+
 // modlue exports
 module.exports = {
   createUser,
+  getUserByEmail,
 };
