@@ -34,5 +34,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.4"
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }
