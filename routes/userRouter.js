@@ -9,8 +9,13 @@ const {
   addUserValidationHandler,
 } = require("../middlewares/common/userValidator");
 
+const {
+  loginValidator,
+  loginValidationHandler,
+} = require("../middlewares/common/loginValidator");
+
 router.post("/create", addUserValidator, addUserValidationHandler, postCreate);
 
-// router.get("/login", getLogin);
+router.post("/login", loginValidator, loginValidationHandler, getLogin);
 
 module.exports = router;
