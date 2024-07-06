@@ -16,6 +16,6 @@ const {
 
 router.post("/create", addUserValidator, addUserValidationHandler, postCreate);
 
-router.get("/login", loginValidator, loginValidationHandler, getLogin);
+router.post("/login", loginValidator, loginValidationHandler, getLogin);
 
 module.exports = router;
