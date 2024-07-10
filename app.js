@@ -7,6 +7,7 @@ require("dotenv").config();
 
 // internal imports
 const userRouter = require("./routes/userRouter");
+const itemRouter = require("./routes/itemRouter");
 
 app.use(express.json());
 // Serve static files from the 'public' directory
@@ -17,6 +18,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // routes
 app.use("/user", userRouter);
+app.use("/item", itemRouter);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "login_register.html"));
