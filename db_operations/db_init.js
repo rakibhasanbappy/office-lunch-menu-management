@@ -10,6 +10,15 @@ CREATE TABLE IF NOT EXISTS users (
 );
 `;
 
+const createItemTableQuery = `
+CREATE TABLE IF NOT EXISTS item (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  description VARCHAR(255),
+  availability BOOLEAN NOT NULL DEFAULT FALSE
+);
+`;
+
 async function initializeDB() {
   const client = new Client({
     host: process.env.PG_HOST,
@@ -22,7 +31,8 @@ async function initializeDB() {
   try {
     await client.connect();
     await client.query(createUsersTableQuery);
-    console.log("Users table created or already exists.");
+    await client.query(createItemTableQuery);
+    console.log("Database Initialized Successfully");
   } catch (err) {
     console.error("Error initializing database:", err);
   } finally {
