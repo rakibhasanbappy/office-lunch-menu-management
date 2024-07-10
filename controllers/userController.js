@@ -89,7 +89,16 @@ async function postCreate(req, res) {
   }
 }
 
+// do logout
+function logout(req, res) {
+  res.clearCookie(process.env.COOKIE_NAME);
+  res.status(200).json({
+    message: "Logout successful",
+  });
+}
+
 module.exports = {
   getLogin,
   postCreate,
+  logout,
 };

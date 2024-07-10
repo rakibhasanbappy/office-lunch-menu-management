@@ -3,7 +3,11 @@ const express = require("express");
 const router = express.Router();
 
 // internal imports
-const { getLogin, postCreate } = require("../controllers/userController");
+const {
+  getLogin,
+  postCreate,
+  logout,
+} = require("../controllers/userController");
 const {
   addUserValidator,
   addUserValidationHandler,
@@ -17,5 +21,7 @@ const {
 router.post("/create", addUserValidator, addUserValidationHandler, postCreate);
 
 router.post("/login", loginValidator, loginValidationHandler, getLogin);
+
+router.delete("/", logout);
 
 module.exports = router;
